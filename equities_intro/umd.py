@@ -1,4 +1,4 @@
-# Copyright 2018 QuantRocket LLC - All Rights Reserved
+# Copyright 2020 QuantRocket LLC - All Rights Reserved
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ class UpMinusDown(Moonshot):
     MOMENTUM_WINDOW = 252 # rank by twelve-month returns
     RANKING_PERIOD_GAP = 22 # but exclude most recent 1 month performance
     TOP_N_PCT = 50 # Buy/sell the top/bottom 50%
-    REBALANCE_INTERVAL = "M" # M = monthly; see http://pandas.pydata.org/pandas-docs/stable/timeseries.html#offset-aliases
+    REBALANCE_INTERVAL = "M" # M = monthly; see https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#offset-aliases
 
     def prices_to_signals(self, prices):
         """
@@ -104,11 +104,12 @@ class UpMinusDown(Moonshot):
         return gross_returns
 
 class USStockCommission(PerShareCommission):
-    IB_COMMISSION_PER_SHARE = 0.005
+    BROKER_COMMISSION_PER_SHARE = 0.005
 
 class UpMinusDownDemo(UpMinusDown):
 
     CODE = "umd-demo"
-    DB = "demo-stocks-1d"
+    DB = "usstock-free-1d"
+    UNIVERSES = "usstock-free"
     TOP_N_PCT = 50
     COMMISSION_CLASS = USStockCommission

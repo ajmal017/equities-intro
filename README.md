@@ -1,6 +1,6 @@
 # equities-intro
 
-Introductory tutorial for equities demonstrating data collection, universe selection, and backtesting of an end-of-day momentum strategy using Moonshot. Data from Sharadar or Interactive Brokers. Compatibile with sample data.
+Introductory tutorial for equities demonstrating data collection, universe selection, and backtesting of an end-of-day momentum strategy using Moonshot. Uses free sample data.
 
 ## Clone in QuantRocket
 
